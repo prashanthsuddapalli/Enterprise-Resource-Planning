@@ -1,0 +1,40 @@
+<%- include('../public/student_page/student_header.ejs') %>
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+</style>
+<br><br><br>
+<table class="student">
+    <% if (locals.student_marks) { %>
+        <tr>
+            <th class="table_name" colspan="4">ID :<%=student_marks.student_id %></th>
+        </tr>
+        <tr>
+            <td class="subject" rowspan="2">Subject</td>
+            <td class="marks" colspan="2">Marks</td>
+        </tr>
+        <tr>
+            <td class="unittest">Final Test Marks</td>
+            <td class="finaltest">Unit Test Marks</td>
+        </tr>
+        <tr>
+            <td>Telugu</td>
+            <td><%=student_marks.telugu_finaltest %></td>
+            <td><%=student_marks.telugu_unittest %></td>
+        </tr>
+        <tr>
+            <td>Hindi</td>
+            <td><%=student_marks.hindi_finaltest %></td>
+            <td><%=student_marks.hindi_unittest %></td>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td><%=student_marks.english_finaltest %></td>
+            <td><%=student_marks.english_unittest %></td>
+        </tr>
+    <%}%>
+</table>
+
+<br><br><br>
+<%- include('../public/student_page/student_footer.ejs') %>

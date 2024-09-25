@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark Academy</title>
+</head>
+<style>
+
+    .nav-bar {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.nav-bar h1 {
+    margin: 0;
+    color: #fff;
+}
+
+.options {
+    text-align: center;
+}
+
+.options a, .options select {
+    color: #fff;
+    text-decoration: none;
+    background-color: #555;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.options select:focus {
+    outline: none;
+}
+
+.options a:hover, .options select:hover {
+    background-color: #777;
+}
+
+</style>
+<body>
+    <header class="nav-bar">
+
+        <div class="title">
+            <h1>Spark Academy</h1>
+        </div>
+        <div class="options">
+            <a href="/teacher_details">Teacher Details</a>
+            <a href="/pay_Fee">Fee Payment</a>
+            <select onchange="location = this.value;">
+                <option disabled selected>student_attendance</option>
+                <option value="/class_attendance?class=1">Class 1</option>
+                <option value="/class_attendance?class=2">Class 2</option>
+                <option value="/class_attendance?class=3">Class 3</option>
+                <option value="/class_attendance?class=4">Class 4</option>
+                <option value="/class_attendance?class=5">Class 5</option>
+                <option value="/class_attendance?class=6">Class 6</option>
+                <option value="/class_attendance?class=7">Class 7</option>
+                <option value="/class_attendance?class=8">Class 8</option>
+                <option value="/class_attendance?class=9">Class 9</option>
+                <option value="/class_attendance?class=10">Class 10</option>
+            </select>
+            <select onchange="location = this.value;">
+                <option disabled selected>Student Marks</option>
+                <option value="/view_classTest_Marks?class=1">Class 1</option>
+                <option value="/view_classTest_Marks?class=2">Class 2</option>
+                <option value="/view_classTest_Marks?class=3">Class 3</option>
+                <option value="/view_classTest_Marks?class=4" >Class 4</option>
+                <option value="/view_classTest_Marks?class=5" >Class 5</option>
+                <option value="/view_classTest_Marks?class=6" >Class 6</option>
+                <option value="/view_classTest_Marks?class=7" >Class 7</option>
+                <option value="/view_classTest_Marks?class=8" >Class 8</option>
+                <option value="/view_classTest_Marks?class=9" >Class 9</option>
+                <option value="/view_classTest_Marks?class=10" >Class 10</option>
+            </select>
+            <select onchange="location = this.value;">
+                <option disabled selected>Student Details</option>
+                <option value="/student_details?class=1">Class 1</option>
+                <option value="/student_details?class=2">Class 2</option>
+                <option value="/student_details?class=3">Class 3</option>
+                <option value="/student_details?class=4" >Class 4</option>
+                <option value="/student_details?class=5" >Class 5</option>
+                <option value="/student_details?class=6" >Class 6</option>
+                <option value="/student_details?class=7" >Class 7</option>
+                <option value="/student_details?class=8" >Class 8</option>
+                <option value="/student_details?class=9" >Class 9</option>
+                <option value="/student_details?class=10" >Class 10</option>
+            </select>
+            <select onchange="location = this.value;">
+                <option disabled selected>Student Fee Details</option>
+                <option value="/student_fee_details?class=1">Class 1</option>
+                <option value="/student_fee_details?class=2">Class 2</option>
+                <option value="/student_fee_details?class=3">Class 3</option>
+                <option value="/student_fee_details?class=4" >Class 4</option>
+                <option value="/student_fee_details?class=5" >Class 5</option>
+                <option value="/student_fee_details?class=6" >Class 6</option>
+                <option value="/student_fee_details?class=7" >Class 7</option>
+                <option value="/student_fee_details?class=8" >Class 8</option>
+                <option value="/student_fee_details?class=9" >Class 9</option>
+                <option value="/student_fee_details?class=10" >Class 10</option>
+            </select>
+        </div>
+    </header>

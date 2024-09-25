@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register From</title>
+    <link rel="stylesheet" href="../components/styles/reg.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <a href="/" id="back"><-Back</a>
+        <form action="/register" method="post" class="register-form">
+            <h1>Register</h1>
+
+            <div class="input-box">
+                <input type="text" class="form-input" name="id" placeholder="Enter your ID" required> 
+            </div>
+            <div class="input-box">
+                <input type="date" class="form-input" name="dob" required>
+            </div>
+            <div class="dot">
+                <h4>Gender : </h4>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male </label>
+                <br>
+                <input type="radio" name="gender" value="Female">
+                <label for="female">Female </label>
+            </div>
+            <div class="input-box">
+                <input type="text" class="form-input" name="firstname" placeholder="Enter your first name" required> 
+            </div>
+            <div class="input-box">
+                <input type="text" class="form-input" name="middle_lastname" placeholder="Enter your last name" required> 
+            </div>
+            <div class="input-box">
+                <input type="text" class="form-input" name="fathername" placeholder="Enter your father's name" required> 
+            </div>
+            <div class="input-box">
+                <input type="text" class="form-input" name="mothername" placeholder="Enter your mother's name" required> 
+            </div>
+            <div class="input-box">
+                <input type="text" class="form-input" name="address" placeholder="Enter your address" required> 
+            </div>
+            <div class="input-box">
+                <input type="tel" class="form-input" name="tel_num" placeholder="Enter your phone number" required>
+            </div>
+            <div class="input-box">
+                <input type="email" class="form-input" name="email" placeholder="Enter your email" required>
+            </div>
+    
+            <div class="input-box">
+                <input type="password" class="form-input" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Save</button>
+            <br><br>
+            
+            <div class="register-link">
+                <p>If User have an existing account?<a href="/login"> Sign In</a></p>
+            </div> 
+        </form>
+    </div>
+    
+</body>
+</html>

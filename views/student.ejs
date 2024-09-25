@@ -1,0 +1,84 @@
+<style>
+    .card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.student {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student th, .student td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.student th {
+    background-color: #333;
+    color: #fff;
+}
+
+.field_name {
+    width: 30%;
+}
+
+.field_value {
+    width: 70%;
+}
+
+</style>
+
+<%- include('../public/student_page/student_header.ejs') %>
+<div class="card">
+    <h1>My Profile</h1>
+    <table class="student">
+        <% if (locals.Details) { %>
+        <tr>
+            <th class="table_name" colspan="2">Student Details</th>
+        </tr>
+        <tr>
+            <td class="field_name">ID : </td>
+            <td class="field_value"><%=Details.student_id%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Name : </td>
+            <td class="field_value"><%=Details.firstname%>&nbsp;<%=Details.middle_lastname%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Class : </td>
+            <td class="field_value"><%=Details.class_number%></td>
+        </tr>
+        <tr>
+            <td class="field_name">DOB / Gender : </td>
+            <td class="field_value"><%=Details.dob%>&nbsp;/&nbsp;<%=Details.gender%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Mother name : </td>
+            <td class="field_value"><%=Details.mothername%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Father name : </td>
+            <td class="field_value"><%=Details.fathername%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Address : </td>
+            <td class="field_value"><%=Details.address%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Email : </td>
+            <td class="field_value"><%=Details.email%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Contact number : </td>
+            <td class="field_value"><%=Details.tel_num%></td>
+        </tr>
+        <% } %>
+    </table>
+</div>
+<%- include('../public/student_page/student_footer.ejs') %>

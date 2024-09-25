@@ -1,0 +1,112 @@
+<style>
+    /* Styling for teacher and management headers */
+.teacher_header,
+.management_header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Styling for class number */
+.classNumber {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Styling for marks table */
+.teacher,
+.management {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.teacher th,
+.management th,
+.teacher td,
+.management td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.teacher th,
+.management th {
+    background-color: #f2f2f2;
+}
+
+.teacher tr:nth-child(even),
+.management tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.teacher tr:hover,
+.management tr:hover {
+    background-color: #ddd;
+}
+
+/* Styling for 'No students registered' message */
+.no_students_message {
+    font-style: italic;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* Styling for footer */
+.teacher_footer,
+.management_footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+</style>
+
+<%if(role==="teacher") { %>
+    <%- include('../public/teacher_page/teacher_header.ejs') %>
+<% } else { %>
+    <%- include('../public/management_page/management_header.ejs') %> 
+<% } %>
+<% if (locals.class_marks.length) { %>
+
+    <h1 class="classNumber"><%=`class ${parseInt(class_marks[0].student_id.slice(6,8))} Marks`%></h1>
+    <table class="teacher">
+        <tr>
+            <td class="studentid" rowspan="4">Student ID</td> 
+            <td class="studentid" rowspan="4">Student Name</td> 
+        </tr>
+        <tr><td class="marks" colspan="6">Marks</td></tr>
+        <tr>
+            <td class="unitTest" colspan="3">Unit Test (Total 25)</td>
+            <td class="finalTest" colspan="3">Final Test (Total 100)</td>
+        </tr>
+        <tr>
+            <td class="subject">Telugu</td>
+            <td class="subject">Hindi</td>
+            <td class="subject">English</td>
+            <td class="subject">Telugu</td>
+            <td class="subject">Hindi</td>
+            <td class="subject">English</td>
+        </tr>
+        <% for( let index = 0; index < class_marks.length; index++ ) { %>
+            <tr>
+                <td><%=class_marks[index].student_id%></td>
+                <td><%=class_marks[index].student_name%></td>
+                <td><%=class_marks[index].telugu_unittest%></td>
+                <td><%=class_marks[index].hindi_unittest%></td>
+                <td><%=class_marks[index].english_unittest%></td>
+                <td><%=class_marks[index].telugu_finaltest%></td>
+                <td><%=class_marks[index].hindi_finaltest%></td>
+                <td><%=class_marks[index].english_finaltest%></td>
+                
+            </tr>
+        <% } %> 
+    </table>
+    <% } else {%>
+        <p>No students was registered in this class</p>
+    <%}%>
+
+<br><br><br>
+
+<%- include('../public/teacher_page/teacher_footer.ejs') %>

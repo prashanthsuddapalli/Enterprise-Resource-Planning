@@ -1,0 +1,97 @@
+<style>
+    /* Styling for teacher and management headers */
+.teacher_header,
+.management_header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Styling for class number */
+.classNumber {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Styling for attendance table */
+.teacher,
+.management {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.teacher th,
+.management th,
+.teacher td,
+.management td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.teacher th,
+.management th {
+    background-color: #f2f2f2;
+}
+
+.teacher tr:nth-child(even),
+.management tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.teacher tr:hover,
+.management tr:hover {
+    background-color: #ddd;
+}
+
+/* Styling for 'No students registered' message */
+.no_students_message {
+    font-style: italic;
+    color: #888;
+    margin-top: 20px;
+}
+
+</style>
+
+
+<%if(role==="teacher") { %>
+    <%- include('../public/teacher_page/teacher_header.ejs') %>
+<% } else { %>
+    <%- include('../public/management_page/management_header.ejs') %> 
+<% } %>
+<% if (locals.class_attendance.length) { %>
+    <h1 class="classNumber"><%=`Class ${parseInt(class_attendance[0].student_id.slice(6,8))} Attendance`%></h1>
+    <table class="teacher">
+
+        <tr>
+            <td>Student ID</td>
+            <td>Student Name</td>
+            <td>Telugu present</td>
+            <td>Telugu present %</td>
+            <td>Hindi present</td>
+            <td>Hindi present %</td>
+            <td>English present</td>
+            <td>English present %</td>
+            <td>Working Days</td>
+        </tr>
+        <% for( let index = 0; index < class_attendance.length; index++ ) { %>
+            <tr>
+                <td><%=class_attendance[index].student_id%></td>
+                <td><%=class_attendance[index].student_name%></td>
+                <td><%=class_attendance[index].telugu%></td>
+                <td><%=((class_attendance[index].telugu/class_attendance[index].workingdays)*100)+"%" %></td>
+                <td><%=class_attendance[index].hindi%></td>
+                <td><%=((class_attendance[index].hindi/class_attendance[index].workingdays)*100)+"%" %></td>
+                <td><%=class_attendance[index].english%></td>
+                <td><%=((class_attendance[index].english/class_attendance[index].workingdays)*100)+"%" %></td>
+                <td><%=class_attendance[index].workingdays %></td>
+            </tr>
+        <% } %> 
+    </table> 
+    <% } else {%>
+        <p>No students was registered in this class</p>
+        
+    <%}%>
+

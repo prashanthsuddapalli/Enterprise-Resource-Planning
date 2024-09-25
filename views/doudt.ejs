@@ -1,0 +1,88 @@
+<style>
+    .contact-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    padding: 20px;
+}
+
+.contact-form-title {
+    text-align: center;
+}
+
+.contact-form-title h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-form-title hr {
+    border: 1px solid #ccc;
+    margin: 10px auto;
+    width: 50%;
+}
+
+.contact-input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.h-captcha {
+    margin-bottom: 15px;
+}
+
+</style>
+
+
+<%- include('../public/student_page/student_header.ejs') %>
+<div class="contact-card">
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <div class="contact-form-title">
+                <h1>How can we help you</h1>
+                <br>
+            </div>
+            <input type="hidden" name="access_key" value="7aad50b2-7f68-48b9-a5bf-95939f3e1fa1">
+            <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
+            <input type="email" name="email" placeholder="Your Email" class="contact-input" required>
+            <textarea name="message" placeholder="Your Message" class="contact-input" required></textarea>
+
+            <!-- hCaptcha Spam Protection -->
+            <div class="h-captcha" data-captcha="true"></div>
+
+            <button type="submit" class="contact-submit-btn">Submit Form</button>
+        </form>
+        <!-- Required for hCaptcha -->
+        <script src="https://web3forms.com/client/script.js" async defer></script>
+    </div>
+</div>
+
+
+<%- include('../public/student_page/student_footer.ejs') %>

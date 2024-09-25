@@ -1,0 +1,112 @@
+<%- include('../public/teacher_page/teacher_header.ejs') %>
+
+<div class="time-table-card">
+    <p id="temp"><h1>TIME TABLE</h1></p>
+    <table>
+        <tr>
+            <th>Day/Period</th>
+            <th>I<br>9:30-10:20</th>
+            <th>II<br>10:20-11:10</th>
+            <th>III<br>11:10-12:00</th>
+            <th>12:00-12:40</th>
+            <th>IV<br>12:40-1:30</th>
+            <th>V<br>1:30-2:20</th>
+            <th>VI<br>2:20-3:10</th>
+            <th>VII<br>3:10-4:00</th>
+        </tr>
+        <tr>
+            <td class="highlight"><b>Monday</b></td>
+            <td>Eng</td>
+            <td>Mat</td>
+            <td>Che</td>
+            <td rowspan="6" class="special"><b>LUNCH</b></td>
+            <td colspan="3" class="special">LAB</td>
+            <td>Phy</td>
+        </tr>
+        <tr>
+            <td class="highlight"><b>Tuesday</b></td>
+            <td colspan="3" class="special">LAB</td>
+            <td>Eng</td>
+            <td>Che</td>
+            <td>Mat</td>
+            <td class="special">SPORTS</td>
+        </tr>
+        <tr>
+            <td class="highlight"><b>Wednesday</b></td>
+            <td>Mat</td>
+            <td>Phy</td>
+            <td>Eng</td>
+            <td>Che</td>
+            <td colspan="3">LIBRARY</td>
+        </tr>
+        <tr>
+            <td class="highlight"><b>Thursday</b></td>
+            <td>Phy</td>
+            <td>Eng</td>
+            <td>Che</td>
+            <td colspan="3" class="special">LAB</td>
+            <td>Mat</td>
+        </tr>
+        <tr>
+            <td class="highlight"><b>Friday</b></td>
+            <td colspan="3" class="special">LAB</td>
+            <td>Mat</td>
+            <td>Che</td>
+            <td>Eng</td>
+            <td>Phy</td>
+        </tr>
+        <tr>
+            <td class="highlight"><b>Saturday</b></td>
+            <td>Eng</td>
+            <td>Che</td>
+            <td>Mat</td>
+            <td colspan="3">SEMINAR</td>
+            <td class="special">SPORTS</td>
+        </tr>
+    </table>
+</div>
+
+<%- include('../public/teacher_page/teacher_footer.ejs') %>
+
+
+<style>
+    .time-table-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    overflow-x: auto;
+    margin-top: 50px;
+}
+
+.time-table-card h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.time-table-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.time-table-card th, .time-table-card td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.time-table-card th {
+    background-color: #f2f2f2;
+}
+
+.time-table-card .highlight {
+    background-color: #f2f2f2;
+}
+
+.time-table-card .special {
+    background-color: #f7f7f7;
+}
+
+</style>

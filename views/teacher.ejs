@@ -1,0 +1,50 @@
+<%- include('../public/teacher_page/teacher_header.ejs') %>
+
+
+    <table class="teacher">
+        <% if (locals.Details) { %>
+         <%console.log(Details)  %>
+        <tr>
+            <th class="table_name" colspan="2">Teacher Details</th>
+        </tr>
+        <tr>
+            <td class="field_name">ID : </td>
+            <td class="field_value"><%=Details.teacher_id%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Name : </td>
+            <td class="field_value"><%=Details.firstname%>&nbsp;<%=Details.middle_lastname%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Class : </td>
+            <td class="field_value"><%=Details.class_number%> class teacher</td>
+        </tr>
+        <tr>
+            <td class="field_name">DOB / Gender : </td>
+            <td class="field_value"><%=Details.dob%>&nbsp;/&nbsp;<%=Details.gender%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Mother name : </td>
+            <td class="field_value"><%=Details.mothername%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Father name : </td>
+            <td class="field_value"><%=Details.fathername%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Address : </td>
+            <td class="field_value"><%=Details.address%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Email : </td>
+            <td class="field_value"><%=Details.email%></td>
+        </tr>
+        <tr>
+            <td class="field_name">Contact number : </td>
+            <td class="field_value"><%=Details.tel_num%></td>
+        </tr>
+        <% } %>
+    </table>
+
+
+<%- include('../public/teacher_page/teacher_footer.ejs') %>

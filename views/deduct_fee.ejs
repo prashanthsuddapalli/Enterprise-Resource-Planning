@@ -1,0 +1,70 @@
+<style>
+.card {
+    width: 40%;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.card table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+.card td {
+    padding: 8px;
+}
+
+.card input[type="text"],
+.card input[type="number"] {
+    width: calc(100% - 16px); /* Subtract padding */
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.edit-fee {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.edit-fee:hover {
+    background-color: #45a049;
+}
+</style>
+
+<%- include('../public/management_page/management_header.ejs') %> 
+<div class="card">
+    <div class="card-content">
+        <h1>Fee Payment</h1>
+        <form action="/detect_fee" method="POST">
+            <table> 
+                <tr>
+                    <td>Student ID</td>
+                    <td>Student Fee</td>
+                </tr>
+                <tr>
+                    <td class="ID"><input type="text" name="student_id" required></td>
+                    <td class="fee"><input type="number" min="0" name="student_fee" required></td>
+                </tr>
+            </table>
+            <br>
+            <button type="submit" class="edit-fee">Submit</button>
+        </form>
+    </div>
+</div>

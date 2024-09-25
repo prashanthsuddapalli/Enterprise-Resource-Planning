@@ -1,0 +1,22 @@
+<%- include('../public/teacher_page/teacher_header.ejs') %>
+<br><br><br>
+    <form action="/student_attendance" method="POST">
+        <table class="teacher"> 
+            <tr>
+                <td>Student ID</td> <!-- Student ID -->
+                <td>Telugu</td> <!-- telugu -->
+                <td>Hindi</td> <!-- hindi -->
+                <td>English</td> <!-- english -->
+            </tr>
+            <tr>
+                <td class="name"><input type="text" name="student_id"></td>
+                <td class="telugu"><input type="number" name="tel" required></td>
+                <td class="hindi"><input type="number" name="hin" required></td>
+                <td class="english"><input type="number" name="eng" required></td>
+            </tr>
+        </table>
+        <br>
+    <button type="submit" class="mark-attendance">Submit</button>
+    </form>
+<br><br><br>
+<%- include('../public/teacher_page/teacher_footer.ejs') %>

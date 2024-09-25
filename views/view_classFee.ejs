@@ -1,0 +1,74 @@
+<style>
+    /* Styling for management header */
+.management_header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Styling for fee details table */
+.teacher {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+.teacher th,
+.teacher td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+.teacher th {
+    background-color: #f2f2f2;
+}
+
+.teacher tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.teacher tr:hover {
+    background-color: #ddd;
+}
+
+/* Styling for 'No students registered' message */
+.no_students_message {
+    font-style: italic;
+    color: #888;
+    margin-top: 20px;
+}
+
+</style>
+
+
+<%- include('../public/management_page/management_header.ejs') %> 
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+</style>
+
+<% if (locals.class_FeeDetails.length) { %>
+    <h1 class="classNumber"><%=`class ${parseInt(class_FeeDetails[0].student_id.slice(6,8))} attendance`%></h1>
+    <table class="teacher">
+        <tr>
+            <td>Student ID</td>
+            <td>Student Name</td>
+            <td>Tution Fee</td>
+        </tr>
+        <% for( let index = 0; index < class_FeeDetails.length; index++ ) { %>
+            <tr>
+                <td><%=class_FeeDetails[index].student_id%></td>
+                <td><%=class_FeeDetails[index].student_name%></td>
+                <td><%=class_FeeDetails[index].tution_fee%></td>
+            </tr>
+        <% } %>
+    </table> 
+    <% } else {%>
+        <p>No students was registered in this class</p>
+        
+    <%}%>
+
+<br><br><br>

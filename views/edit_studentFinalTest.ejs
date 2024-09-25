@@ -1,0 +1,85 @@
+<style>
+     .final-test-form-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+    margin-top: 50px;
+}
+
+.final-test-form-card h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.final-test-form-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.final-test-form-table th, .final-test-form-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.final-test-form-table th {
+    background-color: #f2f2f2;
+}
+
+.final-test-form-table td input[type="text"],
+.final-test-form-table td input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.submit-marks {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-marks:hover {
+    background-color: #0056b3;
+}
+
+</style>
+
+
+<%- include('../public/teacher_page/teacher_header.ejs') %>
+
+
+<div class="final-test-form-card">
+    <h1>Student Final Test Marks</h1>
+    <form action="/student_finalTest_Marks" method="POST">
+        <table class="final-test-form-table"> 
+            <tr>
+                <td>Student ID</td> <!-- Student ID -->
+                <td>Telugu</td> <!-- telugu -->
+                <td>Hindi</td> <!-- hindi -->
+                <td>English</td> <!-- english -->
+            </tr>
+            <tr>
+                <td class="ID"><input type="text" name="student_id" required> </td>
+                <td class="telugu"><input type="number" min="0" max="100" name="tel" required></td>
+                <td class="hindi"><input type="number" min="0" max="100" name="hin" required></td>
+                <td class="english"><input type="number" min="0" max="100" name="eng" required></td>
+            </tr>
+        </table>
+        <br>
+        <button type="submit" class="submit-marks">Submit</button>
+    </form>
+</div>
+
+<%- include('../public/teacher_page/teacher_footer.ejs') %>

@@ -1,0 +1,72 @@
+<style>
+    .attendance-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.attendance-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-card th, .attendance-card td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.attendance-card th {
+    background-color: #f0f0f0;
+}
+
+.attendance-card .subject {
+    font-weight: bold;
+}
+
+.attendance-card .field_name {
+    font-weight: bold;
+}
+
+</style>
+
+
+<%- include('../public/student_page/student_header.ejs') %>
+<div class="attendance-card">
+    <h1>Attendance</h1>
+    <table class="student">
+        <% if (locals.attendance) { %>
+        <tr>
+            <th class="table_name" colspan="4">ID : <%=attendance.student_id%></th>
+        </tr>
+        <tr>
+            <td class="subject">Subject</td>
+            <td class="present">Present</td>
+            <td class="present">Working Days (W)</td>
+            <td class="present_percent">Present Percentage ((P/W) * 100)</td>
+        </tr>
+        <tr>
+            <td class="field_name">Telugu : </td>
+            <td class="field_value"><%=attendance.telugu%></td>
+            <td class="field_value"><%=attendance.workingdays%></td>
+            <td class="field_value"><%=((attendance.telugu / attendance.workingdays) * 100).toFixed(2)+"%" %></td>
+        </tr>
+        <tr>
+            <td class="field_name">English : </td>
+            <td class="field_value"><%=attendance.english%></td>
+            <td class="field_value"><%=attendance.workingdays%></td>
+            <td class="field_value"><%=((attendance.english / attendance.workingdays) * 100).toFixed(2)+"%" %></td>
+        </tr>
+        <tr>
+            <td class="field_name">Hindi : </td>
+            <td class="field_value"><%=attendance.hindi%></td>
+            <td class="field_value"><%=attendance.workingdays%></td>
+            <td class="field_value"><%=((attendance.hindi / attendance.workingdays) * 100).toFixed(2)+"%" %></td>
+        </tr>
+        <% } %>
+    </table>
+</div>
+
+<%- include('../public/student_page/student_footer.ejs') %>

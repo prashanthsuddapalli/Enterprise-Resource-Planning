@@ -1,0 +1,88 @@
+<style>
+    /* Styling for management header */
+.management_header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Styling for student details table */
+.student {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+.student th,
+.student td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.student th {
+    background-color: #f2f2f2;
+}
+
+.student tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.student tr:hover {
+    background-color: #ddd;
+}
+
+/* Styling for 'No students registered' message */
+.no_students_message {
+    font-style: italic;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* Styling for management footer */
+.teacher_footer,
+.management_footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+</style>
+
+<%- include('../public/management_page/management_header.ejs') %> 
+<br><br><br>
+<table class="student">
+    <% if (locals.details.length) { %>
+    <tr>
+        <td>Student ID</td>
+        <td>Student Name</td>
+        <td>Class</td>
+        <td>DOB / gender</td>
+        <td>Mother Name</td>
+        <td>Father Name</td>
+        <td>Address</td>
+        <td>Email</td>
+        <td>Contact Number</td>
+    </tr>
+    <% for( let index = 0; index < details.length; index++ ) { %>
+        <tr>
+            <td class="field_value"><%=details[index].student_id%></td>
+            <td class="field_value"><%=details[index].firstname%>&nbsp;<%=details[index].middle_lastname%></td>
+            <td class="field_value"><%=details[index].class_number%></td>
+            <td class="field_value"><%=details[index].dob%>&nbsp;/&nbsp;<%=details[index].gender%></td>
+            <td class="field_value"><%=details[index].mothername%></td>
+            <td class="field_value"><%=details[index].fathername%></td>
+            <td class="field_value"><%=details[index].address%></td>
+            <td class="field_value"><%=details[index].email%></td>
+            <td class="field_value"><%=details[index].tel_num%></td>
+        </tr>
+    <% } %> 
+
+    <% } else{ %>
+    <p>No students was registered in this class</p>    
+    <%}%>
+</table>
+<br><br><br>
+<%- include('../public/teacher_page/teacher_footer.ejs') %>

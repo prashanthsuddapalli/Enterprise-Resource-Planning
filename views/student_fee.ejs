@@ -1,0 +1,77 @@
+<style>
+
+
+    .card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.student {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student th, .student td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.student th {
+    background-color: #333;
+    color: #fff;
+}
+
+.subject, .present {
+    width: 33.33%;
+}
+
+.field_value {
+    width: 33.33%;
+}
+
+.fee_pay {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+</style>
+
+<%- include('../public/student_page/student_header.ejs') %>
+<div class="card">
+    <h1>Fee payment</h1>
+    <% if (locals.fee_details) { %>
+        <table class="student">
+            <tr>
+                <th class="table_name" colspan="3">ID : <%=fee_details.student_id%></th>
+            </tr>
+            <tr>
+                <td class="subject">Student ID</td>
+                <td class="present">Student Name</td>
+                <td class="present">Fee Due</td>
+            </tr>
+            <tr>
+                <td class="field_value"><%=fee_details.student_id %></td>
+                <td class="field_value"><%=fee_details.student_name %></td>
+                <td class="field_value"><%=fee_details.tution_fee %></td>
+            </tr>
+            <tr>
+                <td colspan="3"><button class="fee_pay">Fee Payment</button></td>
+            </tr>
+        </table>
+    <% } else { %>
+        <p>No Student with entered student ID.</p>
+    <% } %>
+</div>
